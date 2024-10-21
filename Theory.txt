@@ -1,0 +1,988 @@
+Chapter 01 - Inception
+
+1. What is Emmet?
+A. Emmet is an editor plug-in that provides syntax rules for intelligent code completion.
+It is a free add-on for your text editor that allows you to type shortcuts that are then 
+expanded into full pieces of code.
+-----------------------------------------------------------------------------------------
+
+2. Difference between a Library and Framework?
+A. A library is a collection of prewritten code that can be used to simplify tasks. 
+The term library simply refers to a collection of code that is reused repeatedly. 
+It is essentially a set of pre-defined functions and classes that programmers can use 
+to simplify their work and speed up the development process. 
+
+A framework is a structure that you can build software on. It serves as a foundation, 
+so you're not starting entirely from scratch. Frameworks are typically associated with a 
+specific programming language and are suited to different types of tasks.
+
+The technical difference between a framework and library lies in a term called
+inversion of control. When you use a library, you are in charge of the flow of the 
+application. You are choosing when and where to call the library. When you use a framework, 
+the framework is in charge of the flow. It provides some places for you to plug in 
+your code, but it calls the code you plugged in as needed.
+-------------------------------------------------------------------------------------------
+
+3. What is CDN? Why do we use it?
+A. CDN is a content delivery network.
+A CDN’s network of servers allows companies to deliver content from their websites and 
+mobile applications to people more quickly and efficiently, based on their geographic 
+location. In short, a CDN moves data and applications closer to the end user — 
+increasing speed, enhancing security, and improving the user experience.
+------------------------------------------------------------------------------------------
+
+4.  Why is React known as React?
+A. React is named React because of its ability to react to changes in data. 
+When the data in a React component changes, React will automatically re-render the 
+component so that it reflects the new data. This makes it easy to create performant user 
+interfaces that always look up-to-date.
+------------------------------------------------------------------------------------------
+
+5. What is crossorigin in script tag?
+A. resouce request outside the origin is called crossorigin.
+web browser loads page gets data from serverA while loading webpage makes ajax request 
+for serverB for additional data for images or videos.
+------------------------------------------------------------------------------------------
+
+6. What is diference between React and ReactDOM?
+A. React: React is a open-source JS library. to develop UI (User Interface) on web application or 
+site. Its fully component base.
+
+React Dom: React DOM is the glue between React and the DOM. When u want to show your react 
+component on DOM u need to use this ReactDOM.render(); from React Dom.
+
+Before v0.14 React Dom was part of ReactJs. The reason React and ReactDOM were split into 
+two libraries was due to the arrival of React Native. React contains functionality 
+utilised in web and mobile apps. ReactDOM functionality is utilised only in web apps.
+----------------------------------------------------------------------------------------
+
+7. What is difference between react.development.js and react.production.js files via CDN?
+A. The development build is used - as the name suggests - for development reasons. 
+You have Source Maps, debugging and often times hot reloading ability in those builds.
+
+The production build, on the other hand, runs in production mode which means this is the 
+code running on your client's machine. The production build runs uglify and builds your 
+source files into one or multiple minimized files. It also extracts CSS and images and 
+of course any other sources you're loading with Webpack.
+----------------------------------------------------------------------------------------- 
+
+8. What is async and defer? 
+A. normal script tag:
+browser is parsing the html line by line suddenly encounters the script tag, browser go will
+fetch the script from the network, and excute, then and there html parser is paused, after
+that html parser excutes. In this case js script blocking the html parser.
+
+Async:
+while the html parser is going on, the scripts are fetch from the network asychronously, 
+scripts are excutes and stop the html parser, after excuting the scripts html parser continous.
+
+defer:
+the html parser is going on, the scripts are fetching from network, after complition of 
+html parser then only scripts excutes
+-----------------------------------------------------------------------------------------
+
+1/5/2023 Chapter-2 Assignment
+-----------------------------
+what is npm?
+it is basically used to manage packages.
+we use npm because we need many packages for our react, powered by many helper packages those helper packages comes in npm
+--------------------------------------------------------------------------------------------------------------------------
+What is `Parcel/Webpack`? Why do we need it?
+Parcel is a web application bundler, differentiated by its developer experience. It offers 
+blazing fast performance utilizing multicore processing, and requires zero configuration.
+        parcel Advantages
+		-----------------
+		1. HMR - Hot Module Replacement
+		2. File watcher algorithm - C++
+		3. Parcel cache - to do all the activitied by using parcel cache
+		4. Dist file - keep the files minified for us
+		5. bundling
+		6. Minify
+		7. Cleaning our code 
+		8. Dev add production Bulid
+		9. Super Fast bulid algorithm
+		10. image optimization
+		11. Caching while development
+		12. compression
+		13. compatble with older version of browser
+		14.	to enable https on dev
+		15. port number
+		16. consistent hashing algorithm
+		17. zero config
+------------------------------------------------------------------------------------------
+ What is `.parcel-cache?
+.cache folder (or .parcel-cache in parcel v2) stores information about your project when parcel builds it,
+ so that when it rebuilds, it doesn't have to re-parse and re-analyze everything from scratch. 
+ It's a key reason why parcel can be so fast in development mode.
+ -----------------------------------------------------------------------------------------
+ What is `npx` ?
+ The npx stands for Node Package Execute and it comes with the npm, when you installed npm above 5.2.0 version 
+ then automatically npx will installed. It is an npm package runner that can execute any package that you want 
+ from the npm registry without even installing that package. 
+ -----------------------------------------------------------------------------------------------
+ What is difference between `dependencies` vs `devDependencies`?
+ 
+ Dependencies: In package.json file, there is an object called dependencies and it consists of all the packages
+  that are used in the project with its version number. So, whenever you install any library that is required 
+  in your project that library you can find it in the dependencies object.
+
+Dev Dependencies: In package.json file, there is an object called as dev Dependencies and it consists of all the
+ packages that are used in the project in its development phase and not in the production or testing environment
+  with its version number. So, whenever you want to install any library that is required only in your 
+  development phase then you can find it in the dev Dependencies object. 
+  -------------------------------------------------------------------------------------------------------------
+What is Tree Shaking?
+Tree shaking is a method to remove the dead or unwanted code which is basically done by 
+the bundlers. This is important for preparing code that is production ready, for example
+ with clean structures and minimal file size.
+ --------------------------------------------------------------------------------------
+ What is Hot Module Replacement?
+Hot Module Replacement (HMR) improves the development experience by automatically 
+updating modules in the browser at runtime without needing a whole page refresh. 
+This means that application state can be retained as you change small things. 
+Parcel's HMR implementation supports both JavaScript and CSS assets.
+---------------------------------------------------------------------------------------
+What is .gitignore? What should we add and not add to it?
+gitignore file is a text file that tells Git which files or folders to ignore in a 
+project. We should add those files in gitignore which are auto-generated in our project.
+---------------------------------------------------------------------------------------
+What is the difference between package.json and package-lock.json?
+In Node.js, package.json is a versioning file used to install multiple packages in your
+project. As you initialize your node application, you will see three files installed 
+in your app that is node_modules, package.json, and package.lock.json.
+You can initialize the node project by running the below command-npm init
+
+The package-lock.json is a lockfile that holds information on the dependencies or 
+packages installed for a node.js project, including their exact version numbers.
+
+And without package-lock.json, there could be discrepancies in installed versions in 
+various settings. To address this difficulty, package.lock.json is generated to have 
+he same results in any environment. It should be in source control with the package.json
+file so if any other user clones the project and install dependencies; then it will 
+install the same dependencies as in package-lock.json to prevent discrepancies.
+--------------------------------------------------------------------------------------
+Why should we not modify package-lock.json?
+It is a generated file and is not designed to be manually edited. Its purpose is to 
+track the entire tree of dependencies (including dependencies of dependencies) and 
+the exact version of each dependency.
+You should commit package-lock.json to your code repository. Sharing this file with 
+teammates and the production environment is the best way to make sure that everyone 
+has the same configuration for their copy of the project.
+------------------------------------------------------------------------------------
+What is node_modules and should we push it on git?
+node_modules contains all the package which are used or needed for our project. 
+And we should not push this into the git, because it can be auto generated later based
+on package-lock.json file.
+------------------------------------------------------------------------------------
+What is ‘dist’ folder?
+The /dist folder contains the minimized version of the source code. The code present 
+in the /dist folder is actually the code which is used on production web applications.
+-------------------------------------------------------------------------------------
+What is ‘browserlists’?
+Browserslist is a tool that allows specifying which browsers should be supported in 
+your frontend app by specifying "queries" in a config file.It's used by 
+frameworks/libraries such as React, Angular and Vue.
+-------------------------------------------------------------------------------------
+what is ReactDOM-client?
+The react-dom/client package provides client-specific methods used for initializing an app
+ on the client. Most of your components should not need to use this module.
+--------------------------------------------------------------------------------------
+								Chapter-3
+								---------
+
+1. What is JSX?
+A. JSX is javascript XML. It allows us to write HTMl like syntax in React.
+				const heading2 = (
+				  <h1 id="title" key="h2">
+					Namaste React
+				  </h1>
+				  )
+	JSX executes babel will understand the angular bracket, babel tries to understands 
+	line by line code. It creates Abstrac Syntax Tree.
+	Babel convert this as React.createElement, it will give the object.
+	Object will convert as HTML and rendered on DOM
+-----------------------------------------------------------------------------------------
+2. What are the super powers of JSX?
+A. JSX is a syntactical extension to JavaScript. It comes with the full power of JavaScript.
+ JSX produces React elements and can embed any JavaScript expression. Ultimately, the JSX 
+ is converted to JavaScript using compiler/transformers.
+		advantages of jsx- 
+		----------------
+			Readability
+			less code 
+			syntactical sugar
+			maintainability
+			No repeatition
+			developer friendly
+-----------------------------------------------------------------------------------------
+3. {TitleComponent()} vs <TitleComponent/> vs <TitleComponent><TitleComponent/>?
+A. {TitleComponent}: This value describes the TitleComponent as a javascript variable 
+    			expession or a value. The {} can embed a javascript expression or a values inside it.
+   <TitleComponent/> : TitleComponent is a function that returns a JSX value. A compoenet 
+   				is written inside the {< />} expression.
+   <TitleComponent></TitleComponent> : <TitleComponent /> and 
+            <TitleComponent></TitleComponent> are equivalent only when < TitleComponent />
+			 has no children components.The opening and closing tags are created to 
+			 include the child components.
+					e.g.
+						<TitleComponent>
+							<ChildComponen1 />
+							<ChildComponen2 />
+							<ChildComponen3 />
+						</TitleComponent>
+---------------------------------------------------------------------------------------------
+							CHAPTER-4
+							---------
+1. Is JSX mandatory for React?
+A. The JSX is basically a syntax extension of regular JavaScript and is used to create React 
+elements. These elements are then rendered to the React DOM. Each JSX element is just to 
+make use of React easy and for calling React.createElement(component, props, …children) 
+with less work. So, anything that is done with JSX can also be done with just plain 
+avaScript.
+So JSX is not mandatory but is used for writing better and clean code instead of writing 
+code using React.CreateElement.
+------------------------------------------------------------------------------------------
+2. Is ES6 mandatory for React?
+A. ES6 is not mandatory for React but is highly recommendable. The latest projects created on
+React rely a lot on ES6. React uses ES6, and you should be familiar with some of the new 
+features like: Classes, Arrow Functions, Variables(let, const). ES6 stands for ECMAScript6. ECMAScript was created to standardize JavaScript, and ES6 is the 6th version of 
+ECMAScript, it was published in 2015.
+-----------------------------------------------------------------------------------------
+3. How can I write comments in JSX?
+A. SX comments are written as follows:
+
+		{/*  */} - for single or multiline comments
+		Example
+		{/* A JSX comment */}
+		{/* 
+		Multi
+		line
+		JSX
+		comment
+		*/}  
+-----------------------------------------------------------------------------------
+4.  What is <React.Fragment></React.Fragment> and <></>?
+A. React Fragments allow you to wrap or group multiple elements without adding an extra 
+node to the DOM. This can be useful when rendering multiple child elements/components in a
+single parent component.<></> is the shorthand tag for React.Fragment. The only difference
+between them is that the shorthand version does not support the key attribute.
+
+		Example: return (
+				<React.Fragment>
+					<Header />
+					<Navigation />
+					<Main />
+					<Footer />
+				</React.Fragment>
+			);
+
+		return (
+				<>
+					<Header />
+					<Navigation />
+					<Main />
+					<Footer />
+				</>
+			);
+
+-----------------------------------------------------------------------------------------
+5. What is Reconciliation in React?
+A: Reconciliation is the process through which React updates the Browser DOM and makes 
+React work faster. React use a diffing algorithm so that component updates are predictable
+and faster. React would first calculate the difference between the real DOM and the copy
+of DOM (Virtual DOM) when there's an update of components. React stores a copy of Browser
+DOM which is called Virtual DOM. When we make changes or add data, React creates a new 
+Virtual DOM and compares it with the previous one. Comparison is done by Diffing Algorithm.
+React compares the Virtual DOM with Real DOM. It finds out the changed nodes and updates 
+only the changed nodes in Real DOM leaving the rest nodes as it is. This process is called
+Reconciliation.
+-------------------------------------------------------------------------------------------
+6.What is React Fiber?
+A: React Fiber is a concept of ReactJS that is used to render a system faster, smoother and
+smarter. The Fiber reconciler, which became the default reconciler for React 16 and above,
+is a complete rewrite of React’s reconciliation algorithm to solve some long-standing
+issues in React. Because Fiber is asynchronous, React can:
+
+Pause, resume, and restart rendering work on components as new updates come in
+Reuse previously completed work and even abort it if not needed
+Split work into chunks and prioritize tasks based on importance
+--------------------------------------------------------------------------------------------
+7. Why do we need keys in React?
+A: A key is a special attribute you need to include when creating lists of elements in
+React. Keys are used in React to identify which items in the list are changed, updated, 
+or deleted. In other words, we can say that keys are unique Identifier used to give an 
+identity to the elements in the lists. Keys should be given to the elements within the 
+array to give the elements a stable identity.
+
+Example
+<li key={0}>1</li>
+<li key={1}>2</li>
+<li key={2}>3</li>
+Q: Can we use index as keys in React?
+A: Yes, we can use the index as keys, but it is not considered as a good practice to use 
+them because if the order of items may change. This can negatively impact performance and
+ may cause issues with component state. Keys are taken from each object which is being 
+ rendered. There might be a possibility that if we modify the incoming data react may 
+ render them in unusual order.
+---------------------------------------------------------------------------------------
+8. What is props in React? Ways to.
+A. props stands for properties. Props are arguments passed into React components. props are used in React to pass data from one component to another (from a parent component to a child component(s)). They are useful when you want the flow of data in your app to be dynamic.
+
+Example
+function App() {
+  return (
+    <div className="App">
+      <Tool name="Chetan Nada" tool="Figma"/> // name and tool are props
+    </div>
+  )
+}
+-----------------------------------------------------------------------------------------
+9. What is Config Driven UI?
+A. Config Driven UI are based on the configurations of the data application receives. 
+It is rather a good practice to use config driven UIs to make application for dynamic. 
+It is a very common & basic approach to interact with the User. It provides a generic 
+interface to develop things which help your project scale well. It saves a lot of 
+development time and effort. A typical login form, common in most of the Apps. 
+Most of these forms also get frequent updates as the requirements increase in terms of 
+Form Validations, dropdown options,.. or design changes.
+---------------------------------------------------------------------------------------
+10. Difference between Virtual DOM and Real DOM?
+A. DOM stands for Document Object Model, which represents your application UI and whenever
+ the changes are made in the application, this DOM gets updated and the user is able to 
+ visualize the changes. DOM is an interface that allows scripts to update the content, 
+ style, and structure of the document.
+
+Virtual DOM:
+------------
+The Virtual DOM is a light-weight abstraction of the DOM. You can think of it as a copy of the DOM, that can be updated without affecting the actual DOM. It has all the same properties as the real DOM object, but doesn’t have the ability to write to the screen like the real DOM.
+Virtual DOM is just like a blueprint of a machine, can do the changes in the blueprint but those changes will not directly apply to the machine.
+Reconciliation is a process to compare and keep in sync the two files (Real and Virtual DOM). Diffing algorithm is a technique of reconciliation which is used by React.
+Real DOM:
+---------
+The DOM represents the web page often called a document with a logical tree and each branch
+of the tree ends in a node and each node contains object programmers can modify the content
+of the document using a scripting language like javascript and the changes and updates to 
+the dom are fast because of its tree-like structure but after changes, the updated element 
+and its children have to be re-rendered to update the application UI so the re-rendering 
+of the UI which make the dom slow all the UI components you need to be rendered for every 
+dom update so real dom would render the entire list and not only those item that receives 
+the update .
+Real DOM								Virtual DOM
+DOM manipulation is very expensive		DOM manipulation is very easy
+There is too much memory wastage		No memory wastage
+It updates Slow							It updates fast
+It can directly update HTML				It can’t update HTML directly
+Creates a new DOM if the element 
+updates.								Update the JSX if the element update
+It allows us to directly target any 
+specific node (HTML element)			It can produce about 200,000 Virtual DOM Nodes / Second.
+It represents the UI of your application	It is only a virtual representation of the DOM
+-----------------------------------------------------------------------------------------
+									CHAPTER-5
+1. What is the difference between Named export, Default export, and * as export?									---------
+
+A. ES6 provides us to import & export a module and use it in other files. ES6 provides two
+ ways to export a module from a file: named export and default export. In Named export, 
+ one can have multiple named exports per file. Then import the specific exports they want
+ surrounded in {} braces. The name of imported module has to be the same as the name of 
+ the exported module. In Named export, the component is exported from MyComponent.js file 
+ like:
+
+export const MyComponent = () => {}
+export const MyComponent2 = () => {}
+and the component is imported from MyComponent.js file like:
+
+// ex. importing a single named export
+import { MyComponent } from "./MyComponent";
+
+// ex. importing multiple named exports
+import { MyComponent, MyComponent2 } from "./MyComponent";
+
+// ex. giving a named import a different name by using "as":
+import { MyComponent2 as MyNewComponent } from "./MyComponent";
+In Default export, One can have only one default export per file. The naming of import is completely independent in default export and we can use any name we like. In Default export, the component is exported from MyComponent.js file like:
+
+const MyComponent = () => {}
+export default MyComponent;
+and the component is imported from MyComponent.js file like: here we can omit {} in 
+MyComponent.
+
+import MyComponent from "./MyComponent";
+In * as export, it is used to import the whole module as a component and access the
+components inside the module. In * as export, the component is exported from 
+MyComponent.js file like:
+
+export const MyComponent = () => {}
+export const MyComponent2 = () => {}
+export const MyComponent3 = () => {}
+and the component is imported from MyComponent.js file like:
+
+import * as MainComponents from "./MyComponent";
+Now we can use them in JSX as:
+
+<MainComponents.MyComponent />
+<MainComponents.MyComponent2 />
+<MainComponents.MyComponent3 />
+------------------------------------------------------------------------------------------
+2. What is the importance of config.js file?
+A. config.js files are essentially editable text files that contain information required 
+for the successful operation of a program. The files are structured in a particular way, 
+formatted to be user configurable. Most of the computer programs we use: whether office 
+suites, web browsers, even video games are configured via menu interfaces. Configuration 
+files are very simple in structure. For instance, if you were to write an application,
+and the only thing it ever needed to know was its user's preferred name, then its one 
+and only config file could contain exactly one word: the name of the user. For example:
+
+Chetan
+Usually, though, an application needs to keep track of more than just one piece of 
+information, so configuration often uses a key and a value:
+
+NAME='Chetan'
+SURNAME='Nada'
+--------------------------------------------------------------------------------------------
+3. What are React Hooks?
+A. In React version 16.8, React introduced a new pattern called Hooks. React Hooks are 
+simple JavaScript functions that we can use to isolate the reusable part from a 
+functional component. Hooks can be stateful and can manage side-effects. 
+Hooks allow you to reuse stateful logic without changing your component hierarchy. 
+This makes it easy to share Hooks among many components or with the community.
+
+React provides a bunch of standard in-built hooks:
+useState: To manage states. Returns a stateful value and an updater function to update it.
+useEffect: To manage side-effects like API calls, subscriptions, timers, mutations, and more.
+useContext: To return the current value for a context.
+useReducer: A useState alternative to help with complex state management.
+useCallback: It returns a memorized version of a callback to help a child component not re-render unnecessarily.
+useMemo: It returns a memoized value that helps in performance optimizations.
+useRef: It returns a ref object with a current property. The ref object is mutable. It is mainly used to access a child component imperatively.
+useLayoutEffect: It fires at the end of all DOM mutations. It's best to use useEffect as much as possible over this one as the useLayoutEffect fires synchronously.
+useDebugValue: Helps to display a label in React DevTools for custom hooks.
+------------------------------------------------------------------------------------------
+4. Why do we need useState Hook?
+A. useState hook is used to maintain the state in our React application. It keeps track of the state changes so basically useState has the ability to encapsulate local state in a functional component. The useState hook is a special function that takes the initial state as an argument and returns an array of two entries. UseState encapsulate only singular value from the state, for multiple state need to have useState calls.
+
+Syntax for useState hook
+const [state, setState] = useState(initialstate);
+Importing: To use useState you need to import useState from react as shown below:
+import React, { useState } from "react";
+we can use Hooks in Functional Components
+
+const Example = (props) => {
+  // You can use Hooks here!
+  return <div />;
+}
+-------------------------------------------------------------------------------------------
+									CHAPTER-6
+									---------
+1. What is microservices?
+A. Microservices are an architectural approach to building applications. As an architectural
+ framework, microservices are distributed and loosely coupled, so one team’s changes won’t
+ break the entire app. The benefit to using microservices is that development teams are 
+able to rapidly build new components of apps to meet changing business needs
+
+A microservices architecture is a type of application architecture where the application is
+developed as a collection of services. It provides the framework to develop, deploy, and 
+maintain microservices architecture diagrams and services independently.
+-----------------------------------------------------------------------------------------
+2. What is monolothic architecture?
+A. A monolithic architecture is the traditional unified model for the design of a software
+ program. Monolithic, in this context, means "composed all in one piece.
+
+Monolithic software is designed to be self-contained, wherein the program's components or 
+functions are tightly coupled rather than loosely coupled, like in modular software programs.
+In a monolithic architecture, each component and its associated components must all be 
+present for code to be executed or compiled and for the software to run.
+------------------------------------------------------------------------------------------
+3. Why do we need a useeffect hook? 
+A. By using this Hook, you tell React that your component needs to do something after 
+render. React will remember the function you passed (we’ll refer to it as our “effect”), 
+and call it later after performing the DOM updates. In this effect, we set the document 
+title, but we could also perform data fetching or call some other imperative API.
+
+If you’re familiar with React class lifecycle methods, you can think of useEffect Hook as 
+componentDidMount, componentDidUpdate, and componentWillUnmount combined.
+
+Why did we return a function from our effect? This is the optional cleanup mechanism for 
+effects. Every effect may return a function that cleans up after it. This lets us keep 
+the logic for adding and removing subscriptions close to each other. They’re part of the 
+same effect!
+
+------------------------------------------------------------------------------------------
+4. What is optional chaining?
+A. The optional chaining (?.) operator accesses an object's property or calls a function. 
+If the object accessed or function called is undefined or null, it returns undefined 
+instead of throwing an error.
+
+const adventurer = {
+  name: 'Alice',
+  cat: {
+    name: 'Dinah'
+  }
+};
+
+const dogName = adventurer.dog?.name;
+console.log(dogName);
+// Expected output: undefined
+
+console.log(adventurer.someNonExistentMethod?.());
+// Expected output: undefined
+------------------------------------------------------------------------------------------
+5. What is Shimmer ui? 
+A. A shimmer screen is a version of the UI that doesn’t contain actual content. Instead, 
+it mimics the page’s layout by showing its elements in a shape similar to the actual 
+content as it is loading and becoming available (i.e. when network latency allows).
+
+A shimmer screen is essentially a wireframe of the page, with placeholder boxes for text 
+and images.
+------------------------------------------------------------------------------------------
+6. what is skeleton placeholder? 
+A.  skeleton screen is an animated placeholder that simulates the layout of a website while
+ data is being loaded.
+
+They let the user know that some content is loading and, more importantly, provide an 
+indication of what is loading, whether it's an image, text, card, and so on.
+
+This gives the user the impression that the website is faster because they already know 
+what type of content is loading before it appears. This is referred to as perceived 
+performance.
+
+Here are some examples of skeleton screens from Facebook and LinkedIn:
+
+Different types of Skeleton Screens
+There are 2 main types of skeleton screens:
+
+Content Placeholders
+Color Placeholders
+For more info:
+https://www.freecodecamp.org/news/how-to-build-skeleton-screens-using-css-for-better-user-experience
+
+--------------------------------------------------------------------------------------------
+7. What is difference between expression and js statement? 
+A. Expressions:
+---------------
+At its core, an expression is a bit of JavaScript code that produces a value.
+
+For example, these are all expressions:
+
+1 → produces 1
+"hello" → produces "hello"
+5 * 10 → produces 50
+num > 100 → produces either true or false
+
+Statements:
+----------
+A JavaScript program is a sequence of statements. Each statement is an instruction for 
+the computer to do something.
+
+Here are some examples of statements in JavaScript:
+
+let hi = 5;
+if (hi > 10) {
+  // More statements here
+}
+
+Statements often have "slots" for expressions. We can put any expression we like into 
+those slots.
+
+For example, declaring a variable has an expression slot:
+let hi = /* some expression */;
+We can use any of the expressions we saw earlier in that slot:
+
+JS
+let hi = 1;
+let hi = "hello";
+let hi = 5 * 10;
+let hi = num > 100;
+let hi = isHappy ? "🙂" : "🙁";
+let hi = [1, 2, 3].pop();
+------------------------------------------------------------------------------------------
+8. What is Conditional Rendering?
+A. In React, you can create distinct components that encapsulate behavior you need. Then, 
+you can render only some of them, depending on the state of your application. Conditional 
+rendering in React works the same way conditions work in JavaScript.
+
+Your components will often need to display different things depending on different 
+conditions. In React, you can conditionally render JSX using JavaScript syntax like if 
+statements, &&, and ? : operators.
+---------------------------------------------------------------------------------------------
+9. What is Cors?
+A. Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a 
+server to indicate any origins (domain, scheme, or port) other than its own from which a 
+browser should permit loading resources. CORS also relies on a mechanism by which browsers
+make a "preflight" request to the server hosting the cross-origin resource, in order to 
+check that the server will permit the actual request. In that preflight, the browser sends
+headers that indicate the HTTP method and headers that will be used in the actual request.
+------------------------------------------------------------------------------------------
+10. What is async await? 
+A. Async/await is a new way to write Asynchronous code in JS. Before Async/Await we used 
+callbacks and promises in our code.
+
+"Await" only works inside the Async functions. As you know that asynchronous function tasks
+are never dependent on each other. They never wait to complete the first execution and 
+run parallel.
+
+Actually, when we need to load more data from different API endpoints, we mostly fetch the
+data using fetch() function. As you know that fetch() is an Async function so when we call
+a lot of fetch() functions to get the data from different API endpoints then he never 
+waits to complete the first fetch(). In this case, your data might be lost if you are 
+passing data to another component state. To solve this problem we use Async/await in our
+code. 
+
+When we call fetch() function with the await keyword, it means that await keyword telling 
+the async function to stop the execution until the data comes/fetched from the server.
+
+Async functions always return a "promise" and promise makes 3 possibilities 
+(fulfilled, pending, rejected). So basically when we fetch some data from server using API,
+ then here we use "await" to pause the function and start the function again after data 
+ comes from Server.  
+
+async asyncFunc=()=> {
+const data = await fetch("/moviesList");
+ return data;
+}
+Using "Await" we can conveniently handle multiple promises instead of using more .then() 
+functions. For Error Handling, we use try, catch blocks. Here we just need to wrap the 
+code in try block, if any error occurs during fetching of data from the server, we handle 
+this error on catch block.
+
+Even if we have multiple await lines, our catch block picks all the errors that occur in 
+the code.
+
+async asyncFunc=()=> {
+ try {
+  const response = await fetch("/moviesList");
+  const data = await response.json();
+  return data;
+ } 
+catch (error) {
+  alert(error); // catches both errors
+ }
+}
+
+---------------------------------------------------------------------------------------
+11. What is Response.json()? 
+A. son() The json() method of the Response interface takes a Response stream and reads it 
+to completion. It returns a promise which resolves with the result of parsing the body 
+text as JSON .
+-----------------------------------------------------------------------------------------
+									CHAPTER-7
+									----------
+1. What are various ways to add images into our App?Explain with examples?
+A. Using the import Keyword
+   -------------------------
+   You can import a file right in a JavaScript module. This tells a webpack to include 
+   that file in the bundle. Your code should look like this:
+
+				import React from 'react';
+				import house from './house.png';
+
+				const House = ()=>{
+					return(
+						<div className="App">
+							<img src={house} alt="House image height={200} width={200}/>
+						</div>
+					)
+				}
+				export default House;
+
+	Using the require Keyword:
+	--------------------------
+	We can also use the require keyword to load the images into your component. In that 
+	case, your code should look like this:
+
+				import React from 'react';
+
+				const House = ()=>{
+					return(
+						<div className="App">
+							<img src={require('./house.jpg')} alt="House image"/>
+						</div>
+					)
+				}
+				export default House;
+
+	require can also be used for including audio, video, or document files in your project.
+	The most common types are .mp3, .wav, .mp4, .mov, .html, and .pdf.
+
+Adding SVGs
+------------
+One way to add SVG files is described above. You can also import SVGs directly as React 
+components. You can use either of the two approaches. In your code, it would look like 
+this:
+			import React from 'react';
+			import House from './house.png';
+
+				const House = ()=>{
+					return(
+						<div className="App">
+							<House/>
+						</div>
+					)
+				}
+				export default House;
+
+This is handy if you don’t want to load the SVG as a separate file. Don’t forget the 
+curly braces in the import! The ReactComponent import name is significant and tells Create
+ React App that you want a React component that renders an SVG rather than its filename.
+
+ Adding Network Images:
+ ----------------------
+If you are loading images from the network, then it's a pretty straightforward approach.
+In your code, it would look like this:
+
+			import React from 'react';
+
+				const House = ()=>{
+					return(
+						<div className="App">
+							<img src="url"/>
+						</div>
+					)
+				}
+				export default House;
+-----------------------------------------------------------------------------------------
+2. What will happen if we do console.log(useState())?
+A. Here on console we will get an array of length 2 .
+   first one is the default value passed to useState and second is a function().
+	
+3. How will useEffect behave if don't add a dependency array?
+A.	If we don't pass a dependency array in useEffect hook, then according to it's default
+   behaviour it will call the effect (callback funtion passed to useEffect) on every 
+   render of the component in which we are using useEffect. And an empty array passed to 
+   useEffect will reset its default behaviour and it will call effect only once after The
+   initial render of component. 
+	
+4. What is SPA?
+A.	SPA stands for single page application. SPA is a implemention of web application that 
+loads a single webdocument, and then updates the body content of that single document using
+javascript apis such as fetch and XMLHttpRequest.
+	This therefore allow users to use website without loading whole new page on very 
+	interaction or routes.
+	--------------------------------OR----------------------------
+Single Page Application (SPA) is a web application that dynamically updates the 
+webpage with data from web server without reloading/refreshing the entire page. 
+All the HTML, CSS, JS are retrieved in the initial load and other data/resources 
+can be loaded dynamically whenever required. An SPA is sometimes referred to as a 
+single-page interface (SPI).
+	
+5 - What is the differnce between Client side routing and Server side routing?
+A.	In Server side routing , when a user click on a link then browser makes an http request
+ for that pageon server now server process the request and send a response usually a html 
+ page, now bowser discard the old page and loads the new page.
+
+In client side routing , when use click on a link , now client side code catches the event look for the
+the like if the url is not an external then it prevents the browser to make  request.
+then routing library changes the url in brwoser with help of html histroy api and routing libary changes
+the states and loads component on client side. sometimes if it require client app request data from server
+only data not pages, and loads new component on client side.
+--------------------------------------------------------------------------------------
+						 Chapter - 08 Let's get Classy (21/01/2023)
+1. How do you create Nested Routes react-router-dom cofiguration?
+A. - In react-router-dom, we can pass an array to children property of route for 
+	 creating nested routes.
+   - Inside array we pass objects, where path and element fields are defined.
+   - We should be careful to not include '/' before path string, as '/' to root directory
+   - For our code to work we also need an <Outlet/> component, imported from 
+   	react-router-dom, which acts as a placeholder, defined inside parent component, where nested-route data will appear.
+	------------------------------------------------------------------------------
+2. Read abt createHashRouter, createMemoryRouter from React Router docs.
+3. What is the order of life cycle method calls in Class Based Components
+A. Class based components are executed in two phases : Render phase & commit phase.
+Render phase is pure and no side effects. It may be paused, restarted or aborted by 
+React (when child component is created for eg). The constructor(), render() and 
+componentDidMount() happens in this phase.
+In constructor, the props are passed to its parents.
+These methods are called in the following order when an instance of a component is
+being created and inserted into the DOM:
+
+Mounting :
+constructor - The constructor for a React component is called before it is mounted. When 
+implementing the constructor for a React.Component subclass, you should call 
+super(props) before any other statement. Otherwise, this.props will be undefined in 
+the constructor, which can lead to bugs.
+Initializing local state by assigning an object to this.state
+Binding event handler methods to an instance.
+Constructor is the only place where you should assign this.state directly. In all other
+methods, you need to use this.setState() instead.
+componentDidMount() - componentDidMount() is invoked immediately after a component is 
+mounted (inserted into the tree). You may call setState() immediately in componentDidMount()
+so that it triggers re-render before the browser updates the screen.
+
+Updating : 3. componentDidUpdate() - componentDidUpdate() is invoked immediately after
+updating occurs. This method is not called for the initial render.
+Unmounting : 4. componentWillUnmount() -componentWillUnmount() is invoked immediately 
+before a component is unmounted and destroyed. Perform any necessary cleanup in this 
+method, such as invalidating timers, canceling network requests, or cleaning up any 
+subscriptions that were created in componentDidMount().
+	-----------------------------------------------------------------------------
+
+4. Why do we use componentDidMount?
+A. If you need to load data from a remote endpoint, this is a good place to instantiate
+the network request. This method is a good place to set up any subscriptions. You may 
+call setState() immediately in componentDidMount(). It will trigger an extra rendering,
+but it will happen before the browser updates the screen.
+---------------------------------------------------------------------------------
+5. Why do we use componentWillUnmount? Show with example
+A. componentWillUnmount is used to cleanup any function/subscriptions that will be 
+running even after the component is unmounted.
+For example, in Repo class, during componentDidMount() a timer is set with an interval of every one second to print in console. When the component is unmounted (users moves to a different page), the timer will be running in the background, which we might not even realise and causing huge performance issue. To avoid such situations the cleanup function can be done in componentWillUnmount, in this example clearInterval(timer) to clear the timer interval before unmounting Repo component.
+---------------------------------------------------------------------------------
+6. (Research) Why do we use super(props) in constructor?
+super() is used inside constructor of a class to derive the parent's all properties 
+inside the class that extended it. If super() is not used, then Reference Error : 
+Must call super constructor in derived classes before accessing 'this' or returning 
+from derived constructor is thrown in the console.
+A component that extends React.Component must call the super() constructor in the 
+derived class since it’s required to access this context inside the derived class 
+constructor.
+When you try to use props passed on parent to child component in child component using this.props.name, it will still work without super(props). Only super() is also enought for accessing props in render method.
+The main difference between super() and super(props) is the this.props is undefined in child's constructor in super() but this.props contains the passed props if super(props) is used.
+-----------------------------------------------------------------------------
+7. (Research) Why can't we have the callback function of useEffect async?
+useEffect expects it's callback function to return nothing or return a function 
+(cleanup function that is called when the component is unmounted). If we make the 
+callback function as async, it will return a promise which is not expected.
+
+Solution to this is not making the callback function async but created another async 
+function inside callback function of useEffect()
+-------------------------------------------------------------------------------------
+								CHAPTER-9
+								---------
+1. When and why do we need lazy()?
+A. When our app are huge and have huge number of components, then to make size of bundler small and keep our app
+   performance fast, we use lazy() to create more than one bundler for our diffrent components or we can say it perform 
+   code-split.
+
+2. What is suspense?
+A. While using lazy loading on components our react fails to render the components on first click, this happen as our
+   new bundler still have not fetched that component javascript file. So, to overcome this we use suspense while providing the components into render function. By doing this react suspend the render until the bundler fetch that jasvascript file.
+   Syntax <Suspense><About /></Suspense>
+
+3. Advantage and disadvantage of using this code splitting pattern?
+A.  Advantage: 
+    > Performamnce of app increases.
+    > Readablity of app increases.
+    > Easier to maintain app.
+
+    Disadvantage:
+    > Development cost increases.
+    > Loading time increases.
+4. When do we and why do we need suspense ?
+A. React.Suspense lets you specify the loading indicator in case some components in 
+the tree below it are not yet ready to render. In the future we plan to let Suspense 
+handle more scenarios such as data fetching.
+5. Why we got this error : A component suspended while responding to synchronous input.
+This will cause the UI to be replaced with a loading indicator. To fix, updates that 
+suspend should be wrapped with startTransition? How does suspense fix this error?
+Ans: if we don't use suspense component for lazy loading, React doesn't get anything 
+to render. That is why the component gets suspended. As lazy loading returns a promise
+ the component needs to get rendered asynchronously. Suspend component from React can 
+ catch Promise from children and render fallback until the promise is resolved. Thus 
+ the error gets fixed.
+ ---------------------------------------------------------------------------------------
+									CHAPTER-10
+									----------
+1. Explore all the ways of writing css?
+A. 	Inline CSS
+	External CSS
+	Installing the Framework
+	SCSS
+--------------------------------------------------------
+2.How do we configure Tailwind?
+A.	-By using CDN Link
+		<script src="https://cdn.tailwindcss.com"></script>
+	-By installing it with the help of parcel
+	** npm install -D tailwindcss postcss
+	** npx tailwindcss init  [an auto-generated tailwindConfig.CSS is created]
+	** Create a .postcssrc file add below lines
+			{
+	"plugins": {
+		"tailwindcss": {}
+	}
+	}
+
+	In tailwind.config.js file.below lines are seen
+		/** @type {import('tailwindcss').Config} */
+	module.exports = {
+	content: [
+		"./src/**/*.{html,js,ts,jsx,tsx}",
+	],
+	theme: {
+		extend: {},
+	},
+	plugins: [],
+	}
+
+	** Lastly, index.css add  the   below  lines
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+----------------------------------------------------
+
+3. In tailwind.config.css what does  all the key mean  content, theme,  extend  and  plugins?
+A.  -content: tells us the tyye of file extension in project
+   -theme:  define your project’s color palette, type scale, fonts, breakpoints, border radius values, and more[responsiveness]
+   -extend: to add additional larger breakpoint is using "extend" [to override screen size]
+   -plugins: Plugins let you register new styles for Tailwind to inject into the user’s stylesheet using JavaScript instead of CSS
+-----------------------------------------------------------
+
+4. Why do we have .postcssrc file?
+A. enable the tailwindcss plugin
+--------------------------------------------------------------------------------------
+							CHAPTER-11
+							---------
+1. What is prop drilling?
+A. Prop drilling is a way sending props to a child component which is many components 
+   below the parent component. e.g.
+
+<ParentComponent/>
+    <ChildComponent/>
+        <SubChildComponent/>
+   if we need to pass props from ParentComponent to SubChildComponent , we would require 
+   to send the props though ChildComponent also.
+----------------------------------------------------------------------------------------
+2. What is lifting the state up?
+A. Lifting the state up or State lifting is a methos by which we can get access to the 
+child components fro a parent. If we want to perform some type of task that requires a 
+state management between multiple children , we can do so by sate lifting to their parent.
+----------------------------------------------------------------------------------------
+
+3. What is Context Provider and Context Consumer?
+A. Context Provider is used to provide access to a context between multiple components of 
+the application. We can provide the access to the context or the data layer to the whole 
+application to the and its subcomponents.
+
+For example:
+
+return (
+  <UserContext.Provider value={{ user: user, setUser: setUser }}>
+    <Head />
+    <Outlet />
+    <Footer />
+  </UserContext.Provider>
+);
+In the code above , we are providing the access of UserContext to <Head /> <Outlet /> and 
+<Footer /> component
+
+Context Consumer is used to consume the context data , provided by react context. We can 
+do this using useContext hook for functional components and Context.Consumer in clasees based components.
+
+For example:
+
+In Class based components, we can use the Context and use the consumer.
+
+<UserContext.Consumer>
+  {({ user }) => <h1>{user.name}</h1>}
+</UserContext.Consumer>
+In Functional components we can use useContext hook to consume the context.
+
+import UserContext from "../utils/UserContext";
+import { useContext } from "react";
+
+const { user } = useContext(UserContext);
+----------------------------------------------------------------------------------------
+4. If you don’t pass a value to the provider does it take the default value?
+If we do not override the values of context it takes the default values form the context ,
+when we initialise the context.
+-----------------------------------------------------------------------------------------
