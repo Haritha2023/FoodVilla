@@ -4,14 +4,14 @@ export const IMG_CDN_URL =
 
 // Image CDN URL for Restaurant Menu
 export const ITEM_IMG_CDN_URL =
-  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
+  "https://thingproxy.freeboard.io/fetch/https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 
 // Swiggy API to get Restaurant data with foodfire server
 export const swiggy_api_URL =
-  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.008202454086108&lng=77.72806495428085&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+  "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.008202454086108&lng=77.72806495428085&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
 // Swiggy API to get Restaurant Menu data with foodfire server
-export const swiggy_menu_api_URL ="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.008202454086108&lng=77.72806495428085&restaurantId="
+export const swiggy_menu_api_URL ="https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.008202454086108&lng=77.72806495428085&restaurantId="
 // shimmer card unit
 export const shimmer_card_unit = 20;
 
